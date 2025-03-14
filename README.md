@@ -1,6 +1,6 @@
 InstApp2 開発進捗（2025 年 3 月 15 日時点）
 
-![Progress Image](./tmp/progress/2025-03-15progress.png)
+https://near-rock-883.notion.site/18d5dddf3eb7805691b6c80d8fdd572f?pvs=4
 
 # アプリ概要
 
