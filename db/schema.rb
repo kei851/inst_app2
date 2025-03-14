@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_14_094132) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_14_111205) do
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -40,11 +40,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_14_094132) do
   create_table "tasks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "category"
     t.integer "estimated_time"
     t.integer "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "priority"
+    t.bigint "category_id"
+    t.bigint "user_type_id", null: false
+    t.index ["category_id"], name: "index_tasks_on_category_id"
+    t.index ["user_type_id"], name: "index_tasks_on_user_type_id"
   end
 
   create_table "user_types", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -68,5 +72,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_14_094132) do
   add_foreign_key "notes", "tasks"
   add_foreign_key "notes", "users"
   add_foreign_key "progresses", "tasks"
+  add_foreign_key "tasks", "categories"
+  add_foreign_key "tasks", "user_types"
   add_foreign_key "users", "user_types"
 end

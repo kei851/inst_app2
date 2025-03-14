@@ -1,10 +1,13 @@
 // vite.config.js
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path';
 
 export default defineConfig({
   plugins: [vue()],
-  build: {
-    outDir: '../build',  // ビルド成果物をルートの build/ に出力
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
   },
-})
+});
