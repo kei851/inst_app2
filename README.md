@@ -57,7 +57,7 @@ Note (id, task_id, user_id, content)
 # 実装済みの API
 
 ## Task API
-
+```
 GET /api/v1/tasks（タスク一覧取得）
 
 GET /api/v1/tasks/:id（個別タスク取得）
@@ -67,7 +67,7 @@ POST /api/v1/tasks（新規タスク作成）
 PUT/PATCH /api/v1/tasks/:id（タスク更新）
 
 DELETE /api/v1/tasks/:id（タスク削除）
-
+```
 # フロントエンド
 
 Vue 3 と Vite を使用してタスク一覧表示画面を実装済み
@@ -75,7 +75,7 @@ Vue 3 と Vite を使用してタスク一覧表示画面を実装済み
 Axios 経由で Rails API と通信
 
 ## Vue の現状構造
-
+```
 src/
 ├── App.vue
 ├── apiClient.js
@@ -84,15 +84,15 @@ src/
 ├── main.js
 ├── package.json
 └── vite.config.js
-
+```
 # 今後の TODO
 
-ユーザー認証の導入（候補: Devise + JWT）
+- [] ユーザー認証の導入（候補: Devise + JWT）
 
-タスク進捗表示画面の作成
+- [] タスク進捗表示画面の作成
 
-Vue コンポーネントの拡充（タスク詳細表示、メモ追加機能）
+- [] Vue コンポーネントの拡充（タスク詳細表示、メモ追加機能）
 
-稼働管理表との連携（Google Sheets API など）
+- [] 稼働管理表との連携（Google Sheets API など）
 
-UI 改善（ドラッグ＆ドロップ対応等）
+- [] UI 改善（ドラッグ＆ドロップ対応等）
